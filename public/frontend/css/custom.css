@@ -1,0 +1,14 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.checkout_form label{
+    font-size: 12px;
+    font-weight: 700;
+}
+.checkout_form input,.checkout_form textarea{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px;
+    border: 1px solid #ebebeb;
+    margin-bottom: 10px;
+}
