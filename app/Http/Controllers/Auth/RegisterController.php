@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo;
+//     protected $redirectTo;
 
     /**
      * Create a new controller instance.
@@ -40,11 +40,13 @@ class RegisterController extends Controller
     public function __construct()
     {
         if (Auth::check() && Auth::user()->role_as == 1){
-            $this->redirectTo = route('admin.dashboard');
-        }else if(Auth::check() && Auth::user()->role_as == 0){
-             $this->redirectTo = route('home');
+            return redirect()->route('admin.dashboard');
+        }elseif(Auth::check() && Auth::user()->role_as == 0){
+            return redirect()->route('front.home');
+        }else{
+            $this->middleware('guest')->except('logout');
         }
-        $this->middleware('guest')->except('logout');
+
     }
 
     /**

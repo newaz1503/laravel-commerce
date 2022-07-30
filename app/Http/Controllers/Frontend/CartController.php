@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
+
+    public function cart(){
+        $cartItems = Cart::where('user_id', Auth::id())->get();
+        return view('cart', compact('cartItems'));
+    }
+
     public function add_cart(Request $request){
         $product_id = $request->product_id;
         $quantity = $request->quantity;
@@ -29,7 +35,7 @@ class CartController extends Controller
                     $cart->quantity	 = $quantity;
                     $cart->save();
                     return response()->json([
-                        'status' => 'Cart added successfully'
+                        'status' => 'Product added successfully'
                     ],200);
                 }
             }
@@ -59,11 +65,6 @@ class CartController extends Controller
         }
     }
 
-    public function cart(){
-        $cartItems = Cart::where('user_id', Auth::id())->get();
-        return view('cart', compact('cartItems'));
-    }
-
     public function delete_cart(Request $request){
         if (Auth::check()){
             $product_id = $request->product_id;
@@ -79,6 +80,13 @@ class CartController extends Controller
                 'status' => 'You need to login first'
             ]);
         }
+    }
+
+    public function cart_count(){
+        $cart_items = Cart::where('user_id', Auth::id())->count();
+        return response()->json([
+           'count' => $cart_items,
+        ]);
     }
 
 }

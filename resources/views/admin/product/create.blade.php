@@ -3,8 +3,7 @@
 @section("title", 'Product')
 
 @section("css")
-    <!-- Bootstrap Select Css -->
-    <link href="{{asset('backend/plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
+
 @endsection
 
 @section("content")

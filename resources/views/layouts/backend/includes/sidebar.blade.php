@@ -47,13 +47,18 @@
                     <span>Product</span>
                 </a>
             </li>
-            <li>
-                <a href="pages/typography.html">
-                    <i class="material-icons">text_fields</i>
-                    <span>Typography</span>
+            <li class="{{Request::is('admin/orders*') ? 'active' : '' }}">
+                <a href="{{route('admin.orders')}}">
+                    <i class="material-icons">list_alt</i>
+                    <span>Orders</span>
                 </a>
             </li>
-
+            <li class="{{Request::is('admin/users*') ? 'active' : '' }}">
+                <a href="{{route('admin.users')}}">
+                    <i class="material-icons">group</i>
+                    <span>Users</span>
+                </a>
+            </li>
 
             <li class="header">SYSTEM</li>
             <li>

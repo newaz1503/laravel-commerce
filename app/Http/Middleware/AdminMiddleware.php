@@ -19,8 +19,13 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
 
-        if (Auth::check() && Auth::user()->role_as == 1){
-            return $next($request);
+        if (Auth::check()){
+            if (Auth::user()->role_as == 1){
+                return $next($request);
+            }else{
+                Toastr::error('Error', 'Access Denied');
+                return redirect()->route('login');
+            }
         }else{
             Toastr::info('Error', 'You need to login first');
             return redirect()->route('login');

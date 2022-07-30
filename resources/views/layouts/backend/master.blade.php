@@ -28,7 +28,8 @@
 
     <!-- Custom Css -->
     <link href="{{asset('backend/css/style.css')}}" rel="stylesheet">
-
+    <!-- Bootstrap Select Css -->
+    <link href="{{asset('backend/plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{asset('backend/css/themes/all-themes.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">

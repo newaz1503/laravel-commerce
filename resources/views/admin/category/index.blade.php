@@ -30,11 +30,10 @@
                             <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                 <thead>
                                 <tr>
-                                    <th>Serial No</th>
+                                    <th style="width: 3%">Serial No</th>
                                     <th>Name</th>
                                     <th>Description</th>
                                     <th>Image</th>
-                                    <th>Meta title</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -44,11 +43,10 @@
                                         <tr>
                                             <td>{{$key + 1}}</td>
                                             <td>{{$category->name}}</td>
-                                            <td>{{$category->description}}</td>
+                                            <td>{{Str::limit($category->description, 30)}}</td>
                                             <td>
                                                 <img src="{{asset('uploads/images/category/'.$category->image)}}" alt="{{$category->name}}" width="60" height="60">
                                             </td>
-                                            <td>{{$category->meta_title}}</td>
                                             <td>
                                                 @if($category->status == true)
                                                    <span class="btn btn-success btn-sm">Published</span>

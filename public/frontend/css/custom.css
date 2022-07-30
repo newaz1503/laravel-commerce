@@ -1,14 +1,106 @@
+
 body{
     font-family: 'Open Sans', sans-serif;
+
 }
-.checkout_form label{
+a{
+    text-decoration: none;
+    color: #222;
+}
+ label{
     font-size: 12px;
     font-weight: 700;
 }
-.checkout_form input,.checkout_form textarea{
+ /*feature product*/
+.feature__title, .trending__title, .category__title{
+    font-size: 24px;
+    font-weight: 600;
+}
+.product_card .card:hover{
+    box-shadow: 0 0 10px rgba(0,0,0, .175);
+    transition: all 0.2s ease;
+}
+.product_card .card:hover .card-title{
+    text-decoration: underline;
+}
+.product_card .card-title{
+    font-size: 21px;
+    font-weight: 500;
+}
+.product_card .card-text{
+    font-size: 17px;
+    font-weight: 400;
+}
+.checkout_form div{
     font-size: 14px;
     font-weight: 400;
     padding: 5px;
     border: 1px solid #ebebeb;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+.shipping_details div{
+    font-size: 14px;
+    color: #72736e;
+}
+.checkout_form span{
+    font-size: 12px;
+    opacity: 0.8;
+}
+.rating-css div {
+    color: #ffe400;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 800;
+    text-align: left;
+    text-transform: uppercase;
+    /*padding: 10px 0;*/
+}
+.rating-css input {
+    display: none;
+}
+.rating-css input + label {
+    font-size: 30px;
+    text-shadow: 1px 1px 0 #8f8420;
+    cursor: pointer;
+}
+.rating-css input:checked + label ~ label {
+    color: #b4afaf;
+}
+.rating-css label:active {
+    transform: scale(0.8);
+    transition: 0.3s ease;
+}
+.checked{
+    color: #ffe13a;
+}
+.whatsapp-chat{
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+}
+.navbar .navbar-nav .nav-item a{
+    font-size: 16.5px;
+    font-weight: 500;
+}
+.navbar .search_bar input{
+    font-size: 16px;
+}
+.navbar .search_bar input::placeholder{
+    font-size: 16px;
+    color: #8a8e8f;
+}
+.footer{
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #53504a;
+}
+.footer p{
+    font-size: 15px;
+    color: #f1f2f3;
+}
+.checkout_btn{
+    font-size: 14px;
+    font-weight: 500;
 }

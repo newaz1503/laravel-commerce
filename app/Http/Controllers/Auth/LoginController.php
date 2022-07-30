@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo;
+     protected $redirectTo;
 
     /**
      * Create a new controller instance.
@@ -40,8 +40,7 @@ class LoginController extends Controller
         if (Auth::check() && Auth::user()->role_as == 1){
             return redirect()->route('admin.dashboard');
         }elseif(Auth::check() && Auth::user()->role_as == 0){
-
-            return redirect()->route('home');
+            return redirect()->route('front.home');
         }
     }
 
